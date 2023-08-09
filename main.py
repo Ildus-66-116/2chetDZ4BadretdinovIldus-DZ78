@@ -26,12 +26,22 @@ def add_note():
     with open('phonebook.txt', 'a', encoding='UTF-8') as data:
         data.write(str)
 
-def find_note(stroka):
+def find_note(str):
     with open('phonebook.txt', 'r', encoding='UTF-8') as data:
         for line in data:
-            if stroka.lower() in line.lower().split():
+            if str.lower() in line.lower().split():
                 print(line)
 
+def delete_notes(str):
+    lst = []
+    with open('phonebook.txt', 'r', encoding='UTF-8') as data:
+        lst = data.readlines()
+        for line in range(len(lst)):
+            if str.lower() in lst[line].lower().split():
+                lst[line] = ''
+    with open('phonebook.txt', 'w', encoding='UTF-8') as data:
+        for i in lst:
+            data.write(i)
 
 
 while True:
@@ -43,5 +53,8 @@ while True:
     if com == '1':
         find_note('')
     if com == '5':
-        stroka = input('Введите запрос:')
-        find_note(stroka)
+        str = input('Введите запрос:')
+        find_note(str)
+    if com == '3':
+        str = input('Введите запрос:')
+        delete_notes(str)
