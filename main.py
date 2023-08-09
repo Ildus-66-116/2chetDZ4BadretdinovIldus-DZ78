@@ -47,6 +47,16 @@ def edit_note(str):
     delete_note(str)
     add_note()
 
+def read_all():
+    with open('phonebook.txt', 'r', encoding='UTF-8') as data:
+        for line in data:
+            print(line[:-1])
+    # file = open('phonebook.txt', 'r', encoding='UTF-8')
+    # file.close
+    # data = file.readlines()
+    # print(data)
+
+
 while True:
     com = input('1 Выводить все контакты на экран\n2 Добавить контакт\n3 Удалить контакт\n4 Изменить контакт\n5 Найти контакт\n6 Выход\n Введите номер из меню: ')
     if com == '6':
@@ -54,7 +64,7 @@ while True:
     if com == '2':
         add_note()
     if com == '1':
-        find_note('')
+        read_all()
     if com == '5':
         str = input('Введите запрос:')
         find_note(str)
@@ -64,3 +74,4 @@ while True:
     if com == '4':
         str = input('Введите запрос:')
         edit_note(str)
+
