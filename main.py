@@ -32,7 +32,7 @@ def find_note(str):
             if str.lower() in line.lower().split():
                 print(line)
 
-def delete_notes(str):
+def delete_note(str):
     lst = []
     with open('phonebook.txt', 'r', encoding='UTF-8') as data:
         lst = data.readlines()
@@ -43,6 +43,9 @@ def delete_notes(str):
         for i in lst:
             data.write(i)
 
+def edit_note(str):
+    delete_note(str)
+    add_note()
 
 while True:
     com = input('1 Выводить все контакты на экран\n2 Добавить контакт\n3 Удалить контакт\n4 Изменить контакт\n5 Найти контакт\n6 Выход\n Введите номер из меню: ')
@@ -57,4 +60,7 @@ while True:
         find_note(str)
     if com == '3':
         str = input('Введите запрос:')
-        delete_notes(str)
+        delete_note(str)
+    if com == '4':
+        str = input('Введите запрос:')
+        edit_note(str)
