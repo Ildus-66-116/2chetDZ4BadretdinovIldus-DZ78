@@ -19,8 +19,6 @@ def add_note():
     name = input('Введите имя:')
     patronymic = input('Ввыедите отчество:')
     phonenumber = input('Введите номер:')
-    while not phonenumber.isdigit():
-        phonenumber = input('Введите номер:')
     coment = input('Введите комментарий:')
     str = f'{surname} {name} {patronymic} {phonenumber} {coment}\n'
     with open('phonebook.txt', 'a', encoding='UTF-8') as data:
@@ -51,10 +49,6 @@ def read_all():
     with open('phonebook.txt', 'r', encoding='UTF-8') as data:
         for line in data:
             print(line[:-1])
-    # file = open('phonebook.txt', 'r', encoding='UTF-8')
-    # file.close
-    # data = file.readlines()
-    # print(data)
 
 
 while True:
