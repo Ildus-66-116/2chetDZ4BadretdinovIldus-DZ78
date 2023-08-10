@@ -50,11 +50,9 @@ def read_all():
         for line in data:
             print(line[:-1])
 
-
-while True:
+com = ''
+while com != '6':
     com = input('1 Выводить все контакты на экран\n2 Добавить контакт\n3 Удалить контакт\n4 Изменить контакт\n5 Найти контакт\n6 Выход\n Введите номер из меню: ')
-    if com == '6':
-        break
     if com == '2':
         add_note()
     if com == '1':
