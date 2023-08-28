@@ -66,3 +66,8 @@
 #         edit_note(str)
 
 # Модульный вариант:
+
+import controller
+
+if __name__ == '__main__':
+    controller.start()

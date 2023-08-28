@@ -1,0 +1,14 @@
+import text
+
+def main_menu():
+    for i, item in enumerate(text.menu):
+        if i == 0:
+            print(item)
+        else:
+            print(f'\t{i}. {item}')
+    while True:
+        choice = input(text.input_menu)
+        if choice.isdigit and 0 < int(choice) < len(text.menu):
+            return int(choice)
+        else:
+            print(text.input_menu_error)
