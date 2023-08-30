@@ -15,7 +15,9 @@ def start():
             case 3:
                 view.show_book(model.phone_book, text.empty_book_error)
             case 4:
-                pass
+                new_contact = view.input_contact(text.input_contact)
+                model.add_contact(new_contact)
+                view.print_message(text.new_contact(new_contact[0], text.operation[0]))
             case 5:
                 pass
             case 6:

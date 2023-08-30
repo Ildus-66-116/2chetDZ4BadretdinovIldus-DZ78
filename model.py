@@ -20,3 +20,9 @@ def save_file():
     data = '\n'.join(data)
     with open(PATH, 'w', encoding='UTF-8') as file:
         file.write(data)
+
+
+def add_contact(new_contact: list[str]):
+    global phone_book
+    c_id = max(phone_book) + 1
+    phone_book[c_id] = new_contact

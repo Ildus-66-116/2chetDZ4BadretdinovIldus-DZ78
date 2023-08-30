@@ -26,3 +26,9 @@ def show_book(book: dict[int, list[str]], msg):
         print('*'* 87 + '\n')
     else:
         print_message(msg)
+
+def input_contact(msg: str) -> list[str]:
+    contact = []
+    for input_text in msg:
+        contact.append(input(input_text))
+    return contact
