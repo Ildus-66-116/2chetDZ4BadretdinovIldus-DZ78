@@ -7,9 +7,11 @@ def start():
         choice = view.main_menu()
         match choice:
             case 1:
-                pass
+                model.open_file()
+                view.print_message(text.load_successful)
             case 2:
-                pass
+                model.save_file()
+                view.print_message(text.save_successful)
             case 3:
                 pass
             case 4:

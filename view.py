@@ -12,3 +12,8 @@ def main_menu():
             return int(choice)
         else:
             print(text.input_menu_error)
+
+def print_message(msg):
+    print('\n' + '='*len(msg))
+    print(msg)
+    print('='*len(msg) + '\n')
