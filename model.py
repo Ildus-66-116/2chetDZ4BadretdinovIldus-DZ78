@@ -26,3 +26,25 @@ def add_contact(new_contact: list[str]):
     global phone_book
     c_id = max(phone_book) + 1
     phone_book[c_id] = new_contact
+
+def find_contact(word: str) -> dict[int, list[str]]:
+    global phone_book
+    result = {}
+    for c_id, contact in phone_book.items():
+        for field in contact:
+            if word.lower() in field.lower():
+                result[c_id] = contact
+                break
+    return result
+
+def edit_contact(c_id: int, new_contact: list[str]):
+    global phone_book
+    current_contact = phone_book.get(c_id)
+    contact = []
+    for field in range(len(new_contact)):
+        if new_contact[field]:
+            contact.append(new_contact[field])
+        else:
+            contact.append(current_contact[field])
+    phone_book[c_id] = contact
+    return contact[0]
