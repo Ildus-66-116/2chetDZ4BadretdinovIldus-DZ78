@@ -13,7 +13,7 @@ def start():
                 model.save_file()
                 view.print_message(text.save_successful)
             case 3:
-                pass
+                view.show_book(model.phone_book, text.empty_book_error)
             case 4:
                 pass
             case 5:

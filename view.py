@@ -17,3 +17,12 @@ def print_message(msg):
     print('\n' + '='*len(msg))
     print(msg)
     print('='*len(msg) + '\n')
+
+def show_book(book: dict[int, list[str]], msg):
+    if book:
+        print('\n' + '*'* 87)
+        for i, contact in book.items():
+            print(f'{i:>3}. {contact[0]:<40} {contact[1]:<20} {contact[2]:<20}')
+        print('*'* 87 + '\n')
+    else:
+        print_message(msg)
