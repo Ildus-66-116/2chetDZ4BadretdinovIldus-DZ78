@@ -34,6 +34,10 @@ def start():
                     name = model.edit_contact(c_id, new_contact)
                     view.print_message(text.contact_action(name, text.operation[1]))
             case 7:
-                pass
+                if search_contact():
+                    c_id = int(view.input_request(text.input_del_contact_id))
+                    name = model.delete_contact(c_id)
+                    view.print_message(text.contact_action(name, text.operation[2]))
             case 8:
+                view.print_message(text.exit_program)
                 break

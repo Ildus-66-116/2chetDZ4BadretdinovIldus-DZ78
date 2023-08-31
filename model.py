@@ -48,3 +48,7 @@ def edit_contact(c_id: int, new_contact: list[str]):
             contact.append(current_contact[field])
     phone_book[c_id] = contact
     return contact[0]
+
+def delete_contact(c_id: int) -> str:
+    global phone_book
+    return phone_book.pop(c_id)[0]
