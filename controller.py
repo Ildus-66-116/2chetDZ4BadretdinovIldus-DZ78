@@ -39,5 +39,9 @@ def start():
                     name = model.delete_contact(c_id)
                     view.print_message(text.contact_action(name, text.operation[2]))
             case 8:
+                if model.original_book != model.phone_book:
+                    if view.input_request(text.confirm_changes).lower() == 'y':
+                        model.save_file()
+                        view.print_message(text.save_successful)
                 view.print_message(text.exit_program)
                 break
